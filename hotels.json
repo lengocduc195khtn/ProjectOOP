@@ -6,6 +6,7 @@
             300
         ],
         "current": 23,
+        "id": "HF0737",
         "location": "Hai Phong",
         "nRoomTypes": 2,
         "name": "Flamingo Cat Ba"
@@ -18,7 +19,7 @@
             500
         ],
         "current": 69,
-        "id": "HF0737",
+        "id": "DM4405",
         "location": "Da Nang",
         "nRoomTypes": 3,
         "name": "Muong Thanh Luxury"
@@ -33,7 +34,7 @@
             1000
         ],
         "current": 44,
-        "id": "DM4405",
+        "id": "DC7119",
         "location": "Da Lat",
         "nRoomTypes": 5,
         "name": "Colline Dalat"
@@ -47,7 +48,7 @@
             600
         ],
         "current": 149,
-        "id": "DC7119",
+        "id": "DK6385",
         "location": "Da Lat",
         "nRoomTypes": 4,
         "name": "Kings Hotel "
@@ -60,7 +61,7 @@
             500
         ],
         "current": 57,
-        "id": "DK6385",
+        "id": "HC6191",
         "location": "Ha Noi",
         "nRoomTypes": 3,
         "name": "Church Legend"
@@ -74,7 +75,7 @@
             800
         ],
         "current": 67,
-        "id": "HC6191",
+        "id": "NG204",
         "location": "Nha Trang",
         "nRoomTypes": 4,
         "name": "Glory Nha Trang"
@@ -86,7 +87,7 @@
             200
         ],
         "current": 83,
-        "id": "NG204",
+        "id": "DS8453",
         "location": "Da Lat",
         "nRoomTypes": 2,
         "name": "Sammy Dalat"
@@ -100,7 +101,7 @@
             500
         ],
         "current": 170,
-        "id": "DS8453",
+        "id": "DH1775",
         "location": "Da Nang",
         "nRoomTypes": 4,
         "name": "Herriott Hotel"
@@ -114,7 +115,7 @@
             900
         ],
         "current": 74,
-        "id": "DH1775",
+        "id": "HM4052",
         "location": "Hai Phong",
         "nRoomTypes": 4,
         "name": "Manoir Des Arts"
@@ -129,7 +130,7 @@
             900
         ],
         "current": 98,
-        "id": "HM4052",
+        "id": "DR4137",
         "location": "Da Nang",
         "nRoomTypes": 5,
         "name": "Red Palace"
@@ -142,7 +143,7 @@
             600
         ],
         "current": 73,
-        "id": "DR4137",
+        "id": "DC7652",
         "location": "Da Nang",
         "nRoomTypes": 3,
         "name": "Cicilia Danang"
@@ -155,7 +156,7 @@
             600
         ],
         "current": 148,
-        "id": "DC7652",
+        "id": "HV0904",
         "location": "Hue",
         "nRoomTypes": 3,
         "name": "Vinpearl Hotel Hue"
@@ -169,7 +170,7 @@
             400
         ],
         "current": 114,
-        "id": "HV0904",
+        "id": "HD7725",
         "location": "Ha Noi",
         "nRoomTypes": 4,
         "name": "Diamond Legend"
@@ -183,7 +184,7 @@
             700
         ],
         "current": 4,
-        "id": "HD7725",
+        "id": "DS4073",
         "location": "Da Nang",
         "nRoomTypes": 4,
         "name": "Seahorse Hotel"
@@ -198,7 +199,7 @@
             1000
         ],
         "current": 11,
-        "id": "DS4073",
+        "id": "SM2160",
         "location": "Sai Gon",
         "nRoomTypes": 5,
         "name": "Muong Thanh Luxury"
@@ -212,7 +213,7 @@
             700
         ],
         "current": 109,
-        "id": "SM2160",
+        "id": "HM6807",
         "location": "Hai Phong",
         "nRoomTypes": 4,
         "name": "Mercure Hai Phong"
@@ -226,7 +227,7 @@
             600
         ],
         "current": 83,
-        "id": "HM6807",
+        "id": "SA5036",
         "location": "Sai Gon",
         "nRoomTypes": 4,
         "name": "Aluna Ben Thanh"
@@ -238,7 +239,7 @@
             300
         ],
         "current": 3,
-        "id": "SA5036",
+        "id": "DD3725",
         "location": "Da Nang",
         "nRoomTypes": 2,
         "name": "Diamond See Hotel"
@@ -251,7 +252,7 @@
             500
         ],
         "current": 36,
-        "id": "DD3725",
+        "id": "DT5281",
         "location": "Da Lat",
         "nRoomTypes": 3,
         "name": "Tulip Hotel"
@@ -266,7 +267,7 @@
             1000
         ],
         "current": 12,
-        "id": "DT5281",
+        "id": "VM0549",
         "location": "Vinh",
         "nRoomTypes": 5,
         "name": "Muong Thanh Cua Dong"
@@ -280,7 +281,7 @@
             500
         ],
         "current": 38,
-        "id": "VM0549",
+        "id": "HM784",
         "location": "Ha Noi",
         "nRoomTypes": 4,
         "name": "Millennium Hanoi"
@@ -293,7 +294,7 @@
             400
         ],
         "current": 123,
-        "id": "HM784",
+        "id": "VM5424",
         "location": "Vinh",
         "nRoomTypes": 3,
         "name": "Muong Thanh Vinh"
@@ -308,7 +309,7 @@
             700
         ],
         "current": 40,
-        "id": "VM5424",
+        "id": "SC965",
         "location": "Sai Gon",
         "nRoomTypes": 5,
         "name": "Cochin Zen Hotel"
@@ -321,7 +322,7 @@
             300
         ],
         "current": 173,
-        "id": "SC965",
+        "id": "NM1940",
         "location": "Nha Trang",
         "nRoomTypes": 3,
         "name": "Muong Thanh Luxury Nha Trang"
@@ -335,7 +336,7 @@
             700
         ],
         "current": 111,
-        "id": "NM1940",
+        "id": "PT2404",
         "location": "Phu Quoc",
         "nRoomTypes": 4,
         "name": "The Palmy Phu Quoc"
@@ -348,7 +349,7 @@
             400
         ],
         "current": 98,
-        "id": "PT2404",
+        "id": "VL3859",
         "location": "Vinh",
         "nRoomTypes": 3,
         "name": "Lam Giang"
@@ -361,7 +362,7 @@
             500
         ],
         "current": 17,
-        "id": "VL3859",
+        "id": "PM6639",
         "location": "Phu Quoc",
         "nRoomTypes": 3,
         "name": "Movenpick Phu Quoc"
@@ -374,7 +375,7 @@
             500
         ],
         "current": 234,
-        "id": "PM6639",
+        "id": "ST1302",
         "location": "Sai Gon",
         "nRoomTypes": 3,
         "name": "The Myst Dong Khoi"
@@ -388,7 +389,7 @@
             500
         ],
         "current": 120,
-        "id": "ST1302",
+        "id": "HM1243",
         "location": "Ha Noi",
         "nRoomTypes": 4,
         "name": "Melia Ba Vi"
@@ -401,7 +402,7 @@
             400
         ],
         "current": 17,
-        "id": "HM1243",
+        "id": "DD2270",
         "location": "Da Lat",
         "nRoomTypes": 3,
         "name": "Das Bavico"
@@ -413,7 +414,7 @@
             400
         ],
         "current": 56,
-        "id": "DD2270",
+        "id": "SD6799",
         "location": "Sai Gon",
         "nRoomTypes": 2,
         "name": "Delluna Sai Gon"
@@ -425,7 +426,7 @@
             300
         ],
         "current": 165,
-        "id": "SD6799",
+        "id": "HD1594",
         "location": "Ha Noi",
         "nRoomTypes": 2,
         "name": "Dal Vostro Hotel"
@@ -440,7 +441,7 @@
             800
         ],
         "current": 30,
-        "id": "HD1594",
+        "id": "ST0777",
         "location": "Sai Gon",
         "nRoomTypes": 5,
         "name": "The Spring Hotel"
@@ -452,7 +453,7 @@
             200
         ],
         "current": 33,
-        "id": "ST0777",
+        "id": "VH4205",
         "location": "Vinh",
         "nRoomTypes": 2,
         "name": "Hoang Ngan 2"
@@ -466,7 +467,7 @@
             500
         ],
         "current": 277,
-        "id": "VH4205",
+        "id": "SA3770",
         "location": "Sai Gon",
         "nRoomTypes": 4,
         "name": "Alagon D'antique"
@@ -478,7 +479,7 @@
             200
         ],
         "current": 65,
-        "id": "SA3770",
+        "id": "HE9601",
         "location": "Ha Noi",
         "nRoomTypes": 2,
         "name": "Emerald Waters Hotel"
@@ -491,7 +492,7 @@
             600
         ],
         "current": 71,
-        "id": "HE9601",
+        "id": "DC3897",
         "location": "Da Nang",
         "nRoomTypes": 3,
         "name": "Canvas Beach Hotel"
@@ -505,7 +506,7 @@
             600
         ],
         "current": 89,
-        "id": "DC3897",
+        "id": "DD4034",
         "location": "Da Lat",
         "nRoomTypes": 4,
         "name": "Dragon King I"
@@ -517,7 +518,7 @@
             300
         ],
         "current": 73,
-        "id": "DD4034",
+        "id": "HG9893",
         "location": "Hue",
         "nRoomTypes": 2,
         "name": "Gold Hue"
@@ -531,7 +532,7 @@
             600
         ],
         "current": 142,
-        "id": "HG9893",
+        "id": "SJ9801",
         "location": "Sai Gon",
         "nRoomTypes": 4,
         "name": "Joy Inn Cong Hoa"
@@ -544,7 +545,7 @@
             500
         ],
         "current": 41,
-        "id": "SJ9801",
+        "id": "HM2932",
         "location": "Ha Noi",
         "nRoomTypes": 3,
         "name": "Minerva Church Hotel"
@@ -559,7 +560,7 @@
             900
         ],
         "current": 223,
-        "id": "HM2932",
+        "id": "NM2934",
         "location": "Nha Trang",
         "nRoomTypes": 5,
         "name": "Melissa Nha Trang"
@@ -572,7 +573,7 @@
             600
         ],
         "current": 14,
-        "id": "NM2934",
+        "id": "SS7044",
         "location": "Sai Gon",
         "nRoomTypes": 3,
         "name": "Sabina Hotel"
@@ -586,7 +587,7 @@
             700
         ],
         "current": 36,
-        "id": "SS7044",
+        "id": "HM2155",
         "location": "Hue",
         "nRoomTypes": 4,
         "name": "Muong Thanh Holiday"
@@ -598,7 +599,7 @@
             300
         ],
         "current": 108,
-        "id": "HM2155",
+        "id": "DH3567",
         "location": "Da Nang",
         "nRoomTypes": 2,
         "name": "Haian Riverfront Hotel"
@@ -613,7 +614,7 @@
             1000
         ],
         "current": 44,
-        "id": "DH3567",
+        "id": "NP296",
         "location": "Nha Trang",
         "nRoomTypes": 5,
         "name": "Pavillon Garden Hotel"
@@ -628,7 +629,7 @@
             900
         ],
         "current": 227,
-        "id": "NP296",
+        "id": "HT4956",
         "location": "Hai Phong",
         "nRoomTypes": 5,
         "name": "Tecco Do Son"
@@ -640,7 +641,7 @@
             200
         ],
         "current": 177,
-        "id": "HT4956",
+        "id": "VV0877",
         "location": "Vinh",
         "nRoomTypes": 2,
         "name": "Vinh Plaza"
@@ -654,7 +655,7 @@
             700
         ],
         "current": 65,
-        "id": "VV0877",
+        "id": "HH9557",
         "location": "Ha Noi",
         "nRoomTypes": 4,
         "name": "Hanoi La Storia"
@@ -668,7 +669,7 @@
             600
         ],
         "current": 20,
-        "id": "HH9557",
+        "id": "VB130",
         "location": "Vinh",
         "nRoomTypes": 4,
         "name": "Beijing Hotel"
@@ -680,7 +681,7 @@
             300
         ],
         "current": 52,
-        "id": "VB130",
+        "id": "DT0586",
         "location": "Da Lat",
         "nRoomTypes": 2,
         "name": "Thong Do Dalat Hotel"
@@ -694,7 +695,7 @@
             700
         ],
         "current": 156,
-        "id": "DT0586",
+        "id": "DM8535",
         "location": "Da Nang",
         "nRoomTypes": 4,
         "name": "Maximilan Da Nang"
@@ -709,7 +710,7 @@
             900
         ],
         "current": 131,
-        "id": "DM8535",
+        "id": "NB3018",
         "location": "Nha Trang",
         "nRoomTypes": 5,
         "name": "Boton Blue Hotel"
@@ -723,7 +724,7 @@
             700
         ],
         "current": 51,
-        "id": "NB3018",
+        "id": "PR6143",
         "location": "Phu Quoc",
         "nRoomTypes": 4,
         "name": "Radisson Blu "
@@ -738,7 +739,7 @@
             800
         ],
         "current": 54,
-        "id": "PR6143",
+        "id": "DC6451",
         "location": "Da Lat",
         "nRoomTypes": 5,
         "name": "Cocoon Bungalow"
@@ -751,7 +752,7 @@
             500
         ],
         "current": 32,
-        "id": "DC6451",
+        "id": "HR537",
         "location": "Hue",
         "nRoomTypes": 3,
         "name": "Rosaleen Boutique Hotel"
@@ -765,7 +766,7 @@
             700
         ],
         "current": 152,
-        "id": "HR537",
+        "id": "HM9287",
         "location": "Ha Noi",
         "nRoomTypes": 4,
         "name": "Mayflower Ha Noi"
@@ -778,7 +779,7 @@
             300
         ],
         "current": 292,
-        "id": "HM9287",
+        "id": "DY4725",
         "location": "Da Lat",
         "nRoomTypes": 3,
         "name": "Y Lan Hotel"
@@ -793,7 +794,7 @@
             900
         ],
         "current": 192,
-        "id": "DY4725",
+        "id": "HH8201",
         "location": "Ha Noi",
         "nRoomTypes": 5,
         "name": "Hanoian Central Hotel"
@@ -805,7 +806,7 @@
             300
         ],
         "current": 58,
-        "id": "HH8201",
+        "id": "NQ6910",
         "location": "Nha Trang",
         "nRoomTypes": 2,
         "name": "Queen Ann Nha Trang"
@@ -819,7 +820,7 @@
             900
         ],
         "current": 186,
-        "id": "NQ6910",
+        "id": "DA6373",
         "location": "Da Lat",
         "nRoomTypes": 4,
         "name": "Anh Phuong"
@@ -832,7 +833,7 @@
             600
         ],
         "current": 5,
-        "id": "DA6373",
+        "id": "VT8460",
         "location": "Vinh",
         "nRoomTypes": 3,
         "name": "Thong Do Hotel"
@@ -847,7 +848,7 @@
             800
         ],
         "current": 7,
-        "id": "VT8460",
+        "id": "HI3974",
         "location": "Ha Noi",
         "nRoomTypes": 5,
         "name": "Imperial Hotel"
@@ -860,7 +861,7 @@
             500
         ],
         "current": 119,
-        "id": "HI3974",
+        "id": "SQ0715",
         "location": "Sai Gon",
         "nRoomTypes": 3,
         "name": "Queen Central"
@@ -875,7 +876,7 @@
             1100
         ],
         "current": 196,
-        "id": "SQ0715",
+        "id": "DD2053",
         "location": "Da Lat",
         "nRoomTypes": 5,
         "name": "Dau Tay"
@@ -890,7 +891,7 @@
             900
         ],
         "current": 163,
-        "id": "DD2053",
+        "id": "DR6512",
         "location": "Da Lat",
         "nRoomTypes": 5,
         "name": "Rose Valley Hotel"
@@ -903,7 +904,7 @@
             400
         ],
         "current": 70,
-        "id": "DR6512",
+        "id": "SE3926",
         "location": "Sai Gon",
         "nRoomTypes": 3,
         "name": "Emerald Boutique Hotel"
@@ -917,7 +918,7 @@
             600
         ],
         "current": 19,
-        "id": "SE3926",
+        "id": "HA3120",
         "location": "Hue",
         "nRoomTypes": 4,
         "name": "Alba Spa Hotel"
@@ -932,7 +933,7 @@
             900
         ],
         "current": 108,
-        "id": "HA3120",
+        "id": "SH231",
         "location": "Sai Gon",
         "nRoomTypes": 5,
         "name": "Harmony Saigon"
@@ -947,7 +948,7 @@
             700
         ],
         "current": 26,
-        "id": "SH231",
+        "id": "PF3320",
         "location": "Phu Quoc",
         "nRoomTypes": 5,
         "name": "Famiana Green"
@@ -959,7 +960,7 @@
             400
         ],
         "current": 10,
-        "id": "PF3320",
+        "id": "VH4370",
         "location": "Vinh",
         "nRoomTypes": 2,
         "name": "Hai Nguyen 1"
@@ -971,7 +972,7 @@
             400
         ],
         "current": 225,
-        "id": "VH4370",
+        "id": "VA2873",
         "location": "Vinh",
         "nRoomTypes": 2,
         "name": "Amazon Vinh"
@@ -983,7 +984,7 @@
             200
         ],
         "current": 106,
-        "id": "VA2873",
+        "id": "NM7906",
         "location": "Nha Trang",
         "nRoomTypes": 2,
         "name": "Movenpick Cam Ranh"
@@ -995,7 +996,7 @@
             200
         ],
         "current": 28,
-        "id": "NM7906",
+        "id": "HP3707",
         "location": "Hai Phong",
         "nRoomTypes": 2,
         "name": "Punt Hotel"
@@ -1009,7 +1010,7 @@
             500
         ],
         "current": 116,
-        "id": "HP3707",
+        "id": "HH9521",
         "location": "Hue",
         "nRoomTypes": 4,
         "name": "Hotel La Perle"
@@ -1021,7 +1022,7 @@
             200
         ],
         "current": 47,
-        "id": "HH9521",
+        "id": "NV4219",
         "location": "Nha Trang",
         "nRoomTypes": 2,
         "name": "Vinpearl Nha Trang"
@@ -1033,7 +1034,7 @@
             300
         ],
         "current": 26,
-        "id": "NV4219",
+        "id": "HA9440",
         "location": "Hue",
         "nRoomTypes": 2,
         "name": "ANhill Boutique"
@@ -1048,7 +1049,7 @@
             900
         ],
         "current": 192,
-        "id": "HA9440",
+        "id": "HN2188",
         "location": "Hai Phong",
         "nRoomTypes": 5,
         "name": "Nikko Hai Phong"
@@ -1060,7 +1061,7 @@
             200
         ],
         "current": 36,
-        "id": "HN2188",
+        "id": "HG6201",
         "location": "Hai Phong",
         "nRoomTypes": 2,
         "name": "Gallant Hotel 168 "
@@ -1074,7 +1075,7 @@
             800
         ],
         "current": 2,
-        "id": "HG6201",
+        "id": "PS8716",
         "location": "Phu Quoc",
         "nRoomTypes": 4,
         "name": "Suoi May Garden"
@@ -1089,7 +1090,7 @@
             900
         ],
         "current": 73,
-        "id": "PS8716",
+        "id": "SP5243",
         "location": "Sai Gon",
         "nRoomTypes": 5,
         "name": "Prague Airport Hotel"
@@ -1104,7 +1105,7 @@
             900
         ],
         "current": 144,
-        "id": "SP5243",
+        "id": "DT9384",
         "location": "Da Lat",
         "nRoomTypes": 5,
         "name": "Terracotta Hotel "
@@ -1117,7 +1118,7 @@
             600
         ],
         "current": 179,
-        "id": "DT9384",
+        "id": "PA8423",
         "location": "Phu Quoc",
         "nRoomTypes": 3,
         "name": "Ahaveda Phu Quoc"
@@ -1131,7 +1132,7 @@
             900
         ],
         "current": 260,
-        "id": "PA8423",
+        "id": "HC5515",
         "location": "Hai Phong",
         "nRoomTypes": 4,
         "name": "Cozi Hotel"
@@ -1146,7 +1147,7 @@
             1200
         ],
         "current": 51,
-        "id": "HC5515",
+        "id": "HT0949",
         "location": "Hue",
         "nRoomTypes": 5,
         "name": "Thanh Lich Royal Boutique"
@@ -1160,7 +1161,7 @@
             600
         ],
         "current": 160,
-        "id": "HT0949",
+        "id": "DX4428",
         "location": "Da Lat",
         "nRoomTypes": 4,
         "name": "Xavia Dalat"
@@ -1173,7 +1174,7 @@
             500
         ],
         "current": 43,
-        "id": "DX4428",
+        "id": "HL8278",
         "location": "Ha Noi",
         "nRoomTypes": 3,
         "name": "Lieber 2 Hotel"
@@ -1187,7 +1188,7 @@
             700
         ],
         "current": 14,
-        "id": "HL8278",
+        "id": "HR8876",
         "location": "Hai Phong",
         "nRoomTypes": 4,
         "name": "Rustic House"
@@ -1199,7 +1200,7 @@
             400
         ],
         "current": 266,
-        "id": "HR8876",
+        "id": "SS1574",
         "location": "Sai Gon",
         "nRoomTypes": 2,
         "name": "Silverland Central"
@@ -1213,7 +1214,7 @@
             600
         ],
         "current": 83,
-        "id": "SS1574",
+        "id": "PO2759",
         "location": "Phu Quoc",
         "nRoomTypes": 4,
         "name": "Ocean Bay Phu Quoc"
@@ -1225,7 +1226,7 @@
             300
         ],
         "current": 49,
-        "id": "PO2759",
+        "id": "HW3696",
         "location": "Hue",
         "nRoomTypes": 2,
         "name": "White Lotus"
@@ -1238,7 +1239,7 @@
             500
         ],
         "current": 2,
-        "id": "HW3696",
+        "id": "HM0197",
         "location": "Hai Phong",
         "nRoomTypes": 3,
         "name": "Minh Phuong 2"
@@ -1253,7 +1254,7 @@
             1000
         ],
         "current": 10,
-        "id": "HM0197",
+        "id": "HA1368",
         "location": "Hue",
         "nRoomTypes": 5,
         "name": "Asia Hue "
@@ -1266,7 +1267,7 @@
             300
         ],
         "current": 249,
-        "id": "HA1368",
+        "id": "PP1383",
         "location": "Phu Quoc",
         "nRoomTypes": 3,
         "name": "Perle d'Orient Cat Ba"
@@ -1280,7 +1281,7 @@
             900
         ],
         "current": 49,
-        "id": "PP1383",
+        "id": "PN7311",
         "location": "Phu Quoc",
         "nRoomTypes": 4,
         "name": "Nhu House"
@@ -1295,7 +1296,7 @@
             600
         ],
         "current": 116,
-        "id": "PN7311",
+        "id": "DP1275",
         "location": "Da Nang",
         "nRoomTypes": 5,
         "name": "Paris Deli"
@@ -1307,7 +1308,7 @@
             300
         ],
         "current": 58,
-        "id": "DP1275",
+        "id": "SH3486",
         "location": "Sai Gon",
         "nRoomTypes": 2,
         "name": "Ha Noi Hotel"
@@ -1322,7 +1323,7 @@
             700
         ],
         "current": 118,
-        "id": "SH3486",
+        "id": "PM0434",
         "location": "Phu Quoc",
         "nRoomTypes": 5,
         "name": "M Village Phu Quoc"
@@ -1334,7 +1335,7 @@
             400
         ],
         "current": 183,
-        "id": "PM0434",
+        "id": "HB1733",
         "location": "Ha Noi",
         "nRoomTypes": 2,
         "name": "Bach Duong Hotel"
@@ -1348,7 +1349,7 @@
             500
         ],
         "current": 71,
-        "id": "HB1733",
+        "id": "VH3584",
         "location": "Vinh",
         "nRoomTypes": 4,
         "name": "Hai Nguyen 2"
