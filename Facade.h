@@ -2,18 +2,23 @@
 #include<string>
 #include<vector>
 using namespace std;
-class Transport;
+// class Transport;
 class Flight;
 class Hotel;
 class Ticket;
-class Account;
+// class Account;
+
+// Thien added
+#include "Account.h"
+#include "Transport.h"
 
 class Facade
 {
 	//all the available flight, hotel, transport
 	vector<Flight> _flight;
 	vector<Hotel> _hotel;
-	vector<Transport> _transport;
+	// vector<Transport> _transport;
+	vector<Transport*> _transport;
 public:
 	void showTransports(string location);
 	void showHotels(string location);
@@ -24,13 +29,14 @@ public:
 	void cancelTransports(/*ticket*/);//we need something to valid check
 	void cancelHotel(/*ticket*/);
 	void cancelFlight(/*ticket*/);
+	friend class Account;
 };
 
-class Account {
-	/*vector<bill> _hotels;
-	vector<bill> _flights;
-	vector<bill> _transports;*/
-};
+// class Account {
+// 	/*vector<bill> _hotels;
+// 	vector<bill> _flights;
+// 	vector<bill> _transports;*/
+// };
 
 class Transport
 {

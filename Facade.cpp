@@ -4,10 +4,10 @@ void Facade::showTransports(string location)
 {
 	cout << "List of transports available in" << location << " : \n";
 	for (int i = 0; i < this->_transport.size(); i++)
-		if (this->_transport[i]._location == location) {
-			cout << "Transport type: " << this->_transport[i]._type << endl;//uprade later
-			cout << "ID: " << this->_transport[i]._ID << endl;
-			cout << "Service time: " << this->_transport[i]._time << endl;
+		if (this->_transport[i]->_location == location) {
+			cout << "Transport type: " << this->_transport[i]->_type << endl;//uprade later
+			cout << "ID: " << this->_transport[i]->_ID << endl;
+			cout << "Service time: " << this->_transport[i]->_time << endl;
 			cout << "------------------------------------------------\n";//seperator
 		}			
 }
@@ -54,8 +54,8 @@ bool Facade::bookTicket(string name, int amount, int type)
 bool Facade::bookTransport(string ID)
 {
 	for (int i = 0; i < this->_transport.size(); i++)
-		if (this->_transport[i]._ID == ID)			
-			return this->_transport[i].book();					
+		if (this->_transport[i]->_ID == ID)			
+			return this->_transport[i]->book();					
 	return false;
 }
 

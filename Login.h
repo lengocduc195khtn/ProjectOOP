@@ -97,7 +97,7 @@ Account *logIn(const AccountList *accountList)
             }
             else
             {
-                cout << "You lost too much. Please wait 5 minutes to login again." << endl;
+                cout << "You lost too much. Please wait 5 minutes to login again..." << endl;
                 ////
                 /*
                 cout << "Do you want to exit? Press 0. To continue press 1" << endl;
@@ -118,6 +118,7 @@ Account *logIn(const AccountList *accountList)
     }
 
     return accountList->find(posAccount);
+    // return nullptr;
 }
 bool logOut(Account **account)
 {

@@ -15,6 +15,7 @@ public:
     }
     ~AccountList()
     {
+        // insert the account list to a user database 
         for (int i = 0; i < this->_size; i++)
             delete this->_list[i];
 
