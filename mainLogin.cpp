@@ -8,6 +8,7 @@ int main()
     // Nó là con trỏ mới trỏ song song vào vùng nhớ được chọn
     Account *currentAccount = logIn(accountList);
     currentAccount->print();
+    getchar();
     // Tại đây mình log Out nè
     // Mình xóa con trỏ mới tạo lúc nãy á
     // Do là con trỏ song song nên mình xóa nó cũng không ảnh hưởng gì hết

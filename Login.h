@@ -34,6 +34,7 @@ bool signUp(AccountList *accountList)
 {
     string nameUser;
     string password;
+    cout << "\n<<< SIGN UP SCREEN >>>\n";
     cout << "Enter your name user: ";
     cin >> nameUser;
     cout << "Enter your password: ";
@@ -45,6 +46,7 @@ bool signUp(AccountList *accountList)
 }
 Account *logIn(const AccountList *accountList)
 {
+    cout << "\n<<< LOG IN SCREEN >>>\n";
     string nameUser;
     string password;
     bool checkNameUser = false;
