@@ -5,36 +5,53 @@
 #include <vector>
 #include <windows.h>
 #include <iomanip>
+#include "json/json.hpp"
+#include <fstream>
+
+#include <deque>
+#include <list>
+#include <unordered_set>
+
 using namespace std;
+using json = nlohmann::json;
 
 class Account
 {
 private:
     string _nameUser;
     string _password;
-
-    string _ID;
-    string _name;
-    string _birthdate;
-    string _phone;
+    /*
+        string _ID;
+        string _name;
+        string _birthdate;
+        string _phone;*/
     // vector<Hotel*> _hotel;
     // vector<Tranport*> _tranport;
     // vector<Flight*> _flight;
-protected:
-    bool updateInfoUser(string ID, string name, string date, string phone)
+public:
+    void getInfo(json &j)
     {
-        this->_ID = ID;
-        this->_name = name;
-        this->_birthdate = date;
-        this->_phone = phone;
-        return 1;
+        json k;
+        k["NameUser"] = this->_nameUser;
+        k["Password"] = this->_password;
+
+        j.push_back(k);
     }
-    void printinfo()
-    {
-        cout << setw(10) << "Full name:" << this->_name << endl;
-        cout << setw(10) << "Birthdate:" << this->_birthdate << endl;
-        cout << setw(10) << "Phone:" << this->_phone << endl;
-    }
+    /*
+        bool updateInfoUser(string ID, string name, string date, string phone)
+        {
+            this->_ID = ID;
+            this->_name = name;
+            this->_birthdate = date;
+            this->_phone = phone;
+            return 1;
+        }
+        void printinfo()
+        {
+            cout << setw(10) << "Full name:" << this->_name << endl;
+            cout << setw(10) << "Birthdate:" << this->_birthdate << endl;
+            cout << setw(10) << "Phone:" << this->_phone << endl;
+        }*/
 
 public:
     Account(string nameUser, string password)

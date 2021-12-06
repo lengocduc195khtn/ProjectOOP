@@ -37,11 +37,19 @@ bool signUp(AccountList *accountList)
     cout << "\n<<< SIGN UP SCREEN >>>\n";
     cout << "Enter your name user: ";
     cin >> nameUser;
+    while (accountList->checkExist(nameUser))
+    {
+        cout << "Name user has existed. " << endl;
+        cout << "Enter your name user: ";
+        cin >> nameUser;
+    }
     cout << "Enter your password: ";
-    // cin >> password;
     inputPassword(password);
+    cout << "signUp success." << endl;
     Account *temp = new Account(nameUser, password);
     accountList->pushBack(temp);
+
+    accountList->update();
     return 1;
 }
 Account *logIn(const AccountList *accountList)
@@ -60,7 +68,7 @@ Account *logIn(const AccountList *accountList)
     // cin >> password;
     inputPassword(password);
 
-    while (posAccount = accountList->check(nameUser, checkNameUser, password, checkPassword) && posAccount == -1)
+    while (!accountList->check(nameUser, checkNameUser, password, checkPassword))
     {
         if (checkNameUser == 0)
         {
