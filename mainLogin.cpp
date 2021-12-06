@@ -15,6 +15,6 @@ int main()
     // Mình xóa con trỏ mới tạo lúc nãy á
     // Do là con trỏ song song nên mình xóa nó cũng không ảnh hưởng gì hết
     logOut(&currentAccount);
-
+    accountList->update();
     return 0;
 }

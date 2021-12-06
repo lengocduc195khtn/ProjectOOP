@@ -49,7 +49,7 @@ bool signUp(AccountList *accountList)
     Account *temp = new Account(nameUser, password);
     accountList->pushBack(temp);
 
-    accountList->update();
+
     return 1;
 }
 Account *logIn(const AccountList *accountList)
