@@ -1,0 +1,29 @@
+[
+    {
+        "Birth": "19052002",
+        "ID": "241988654",
+        "Name": "Le Ngoc Duc",
+        "Password": "123",
+        "Phone": "0378871736",
+        "Sex": true,
+        "Username": "lengocduc"
+    },
+    {
+        "Birth": "18122003",
+        "ID": "492847384",
+        "Name": "Le Ngoc",
+        "Password": "146",
+        "Phone": "0998778765",
+        "Sex": false,
+        "Username": "lengoc"
+    },
+    {
+        "Birth": "341",
+        "ID": "948938728",
+        "Name": "",
+        "Password": "123",
+        "Phone": "121439",
+        "Sex": false,
+        "Username": "my"
+    }
+]
