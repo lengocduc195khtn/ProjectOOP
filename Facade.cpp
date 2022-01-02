@@ -2,7 +2,7 @@
 
 void Facade::showAvaTck(string time, string src, string des, bool isTwoWay)
 {
-	vector<Flight> filtered = Flight::find(_avaFlt, src, des, time);// filter the flights
+	vector<Flight> filtered = Flight::filter(_avaFlt, src, des, time);// filter the flights
 	for (auto flight : filtered)// show the general info of each
 		cout << flight.info() << endl;
 	int choice, rch, cch, numOfTck = 0;

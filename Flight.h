@@ -32,5 +32,5 @@ public:
 	Ticket* book(int row, int col);
 	string showEmptySeat(bool isTwoWay);
 	string seatInfo(int row, int col);
-	static vector<Flight> find(vector<Flight*> list, string dep, string arr, string time);
+	static vector<Flight> filter(vector<Flight*> list, string dep, string arr, string time);
 };

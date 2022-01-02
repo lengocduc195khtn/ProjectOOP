@@ -100,7 +100,7 @@ string Flight::showEmptySeat(bool isTwoWay)
 	for (auto row : _ticket)
 		for (auto col : row) {
 			if (!col->_isBooked)
-				res+= "O\t";//info function can be modify later
+				res+= "O\t";
 			else
 				res+= "X\t";
 			res += "\n";
@@ -113,7 +113,7 @@ string Flight::seatInfo(int row, int col)
 	return _ticket[row][col]->info();
 }
 
-vector<Flight> Flight::find(vector<Flight*> list, string dep, string arr, string time)
+vector<Flight> Flight::filter(vector<Flight*> list, string dep, string arr, string time)
 {
 	vector<Flight> res;
 	for (auto item : list)
