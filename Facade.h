@@ -13,17 +13,19 @@ typedef Flight::Ticket Ticket;
 
 class Facade
 {	
+	// database
 	vector<Flight* > _avaFlt;// available flight
 	vector<Hotel*> _avaHtl;// available hotels
 	vector<Transport*> _avaTrs;// available transports
-
+	// account
 	vector<Ticket*> _bkdTck;// booked tickets
 	vector<Hotel*> _bkdHtl;// booked hotels
 	vector<Transport*> _bkdTrs;// booked transport
-public:
+	
+public:	
 	Facade(vector<Flight*> ,vector<Hotel*> , vector<Transport*>);
 	void updateJson() {}	
-	void bookTicket(string dep, string arr, Date depD, Time depT, Date arrD, Time arrT, bool isTwoWay);
+	void bookTicket(string dep, string arr, string depTime, string arrTime, bool isTwoWay);
 	void bookTransport(string src, string des, Time time);
 	void bookHotel(Date date, string location);
 	void showBookedTrs();
@@ -32,4 +34,5 @@ public:
 	void cancelTrs(int index);
 	void cancelHtl(int index);
 	void cancelTck(int index);
+	~Facade();
 };

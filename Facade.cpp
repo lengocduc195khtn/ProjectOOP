@@ -10,27 +10,32 @@ Facade::Facade(vector<Flight*> flt, vector<Hotel*> htl, vector<Transport*> trs)
 		_avaTrs.push_back(item);	
 }
 
-void Facade::bookTicket(string dep, string arr, Date depD, Time depT, Date arrD, Time arrT, bool isTwoWay)
+void Facade::bookTicket(string dep, string arr, string depTime, string arrTime, bool isTwoWay)
 {
+	string buffer;
+	buffer = depTime.substr(0, 8); Date depD(buffer);
+	buffer = depTime.substr(8); Time depT(buffer + "00");
+	buffer = arrTime.substr(0, 8); Date arrD(buffer);
+	buffer = arrTime.substr(8); Time arrT(buffer + "00");
 	vector<Flight> filtered = Flight::showAvailable(_avaFlt, dep, arr, depT, depD, arrT, arrD);// showAvailable the flights
 	for (auto flight : filtered)// show the general info of each
 		cout << flight.info() << endl;
 	int choice, pos = 0;
 	cin >> choice;//let the user choose the flight to see further detail	
 	Flight* choseFlt = _avaFlt[choice];
-	choseFlt->showEmptySeat(isTwoWay);
+
 	cout << "Choose position index: ";
 	cin >> pos;
-	cout << "Seat info:\n" << choseFlt->seatInfo(pos);
+	cout << "Seat info:\n" << choseFlt->seatInfo();
 	bool order = 0;// confirm order
 	cin >> order;
 	if (order) {
-		Ticket* choseSeat = choseFlt->book(pos);
+		Ticket* choseSeat = choseFlt->book();
 		if (choseSeat) {
 			_bkdTck.push_back(choseSeat);
 			updateJson();// dummy function
 		}
-	}
+	}	
 }
 
 void Facade::bookTransport(string src, string des, Time time)
@@ -41,6 +46,7 @@ void Facade::bookTransport(string src, string des, Time time)
 	int choice, pos = 0;
 	cin >> choice;//let the user choose the item to see further detail	
 	Transport* chosetrs = _avaTrs[choice];
+
 	bool order = 0;// confirm order
 	cin >> order;
 	if (order) {
@@ -75,6 +81,7 @@ void Facade::showBookedTrs()
 {
 	for (auto item : _bkdTrs)
 		cout << item->info() << endl;
+
 	cout << "select one:";
 	int selection = 0;
 	cin >> selection;
@@ -108,6 +115,7 @@ void Facade::cancelTrs(int index)
 {	
 	if (index >= _bkdTrs.size())
 		return;
+	_bkdTrs[index]->cancel();
 	_bkdTrs.erase(next(_bkdTrs.begin(), index));
 }
 
@@ -115,6 +123,7 @@ void Facade::cancelHtl(int index)
 {
 	if (index >= _bkdHtl.size())
 		return;
+	_bkdHtl[index]->cancel();
 	_bkdHtl.erase(next(_bkdHtl.begin(), index));
 }
 
@@ -123,4 +132,17 @@ void Facade::cancelTck(int index)
 	if (index >= _bkdTck.size())
 		return;
 	_bkdTck.erase(next(_bkdTck.begin(), index));
+}
+
+Facade::~Facade()
+{
+	for (auto item : _avaFlt)
+		delete item;
+	_avaFlt.clear();
+	for (auto item : _avaHtl)
+		delete item;
+	_avaHtl.clear();
+	for (auto item : _avaTrs)
+		delete item;
+	_avaTrs.clear();
 }
