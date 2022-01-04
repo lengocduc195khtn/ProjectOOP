@@ -10,8 +10,9 @@ Facade::Facade(vector<Flight*> flt, vector<Hotel*> htl, vector<Transport*> trs)
 		_avaTrs.push_back(item);	
 }
 
-void Facade::bookTicket(string dep, string arr, string depTime, string arrTime, bool isTwoWay)
+vector<Ticket*> Facade::bookTicket(string dep, string arr, string depTime, string arrTime, bool isTwoWay)
 {
+	vector<Ticket*> res;
 	string buffer;
 	buffer = depTime.substr(0, 8); Date depD(buffer);
 	buffer = depTime.substr(8); Time depT(buffer + "00");
@@ -20,12 +21,9 @@ void Facade::bookTicket(string dep, string arr, string depTime, string arrTime, 
 	vector<Flight> filtered = Flight::showAvailable(_avaFlt, dep, arr, depT, depD, arrT, arrD);// showAvailable the flights
 	for (auto flight : filtered)// show the general info of each
 		cout << flight.info() << endl;
-	int choice, pos = 0;
+	int choice = 0;
 	cin >> choice;//let the user choose the flight to see further detail	
-	Flight* choseFlt = _avaFlt[choice];
-
-	cout << "Choose position index: ";
-	cin >> pos;
+	Flight* choseFlt = _avaFlt[choice];	
 	cout << "Seat info:\n" << choseFlt->seatInfo();
 	bool order = 0;// confirm order
 	cin >> order;
@@ -33,48 +31,86 @@ void Facade::bookTicket(string dep, string arr, string depTime, string arrTime, 
 		Ticket* choseSeat = choseFlt->book();
 		if (choseSeat) {
 			_bkdTck.push_back(choseSeat);
+			res.push_back(choseSeat);
 			updateJson();// dummy function
 		}
 	}	
+	if(isTwoWay){
+		string temp;
+		cout << "return departure date and time: ";
+		getline(cin, temp);		
+		buffer = temp.substr(0, 8); Date RdepD(buffer);
+		buffer = temp.substr(8); Time RdepT(buffer + "00");
+		cout << "return arrival date and time: ";
+		getline(cin, temp);
+		buffer = temp.substr(0, 8); Date RarrD(buffer);
+		buffer = temp.substr(8); Time RarrT(buffer + "00");
+		vector<Flight> filtered = Flight::showAvailable(_avaFlt, arr, dep, RdepT, RdepD, RarrT, RarrD);// showAvailable the flights
+		for (auto flight : filtered)// show the general info of each
+			cout << flight.info() << endl;
+		int choice = 0;
+		cin >> choice;//let the user choose the flight to see further detail	
+		Flight* choseFlt = _avaFlt[choice];
+
+		cout << "Seat info:\n" << choseFlt->seatInfo();
+		bool order = 0;// confirm order
+		cin >> order;
+		if (order) {
+			Ticket* choseSeat = choseFlt->book();
+			if (choseSeat) {
+				_bkdTck.push_back(choseSeat);
+				res.push_back(choseSeat);
+				updateJson();// dummy function
+			}
+		}
+	}
+	return res;
 }
 
-void Facade::bookTransport(string src, string des, Time time)
+vector<Transport*> Facade::bookTransport(string src, string des, Time time)
 {
+	vector<Transport*> res;
 	vector<Transport*> filtered = Transport::showAvailable(_avaTrs, time, src, des);
 	for (auto item : filtered)// show the general info of each
 		cout << item->info() << endl;
-	int choice, pos = 0;
+	int choice = 0;
 	cin >> choice;//let the user choose the item to see further detail	
 	Transport* chosetrs = _avaTrs[choice];
-
 	bool order = 0;// confirm order
 	cin >> order;
 	if (order) {
 		bool buffer = chosetrs->book();
 		if (buffer) {
 			_bkdTrs.push_back(chosetrs);
+			res.push_back(chosetrs);
 			updateJson();// dummy function
 		}
 	}
+	return res;
 }
 
-void Facade::bookHotel(Date date, string location)// hỏi Thiên xem htl db có sẵn ngày chưa
+vector<Hotel*> Facade::bookHotel(Date date, string location)// hỏi Thiên xem htl db có sẵn ngày chưa
 {
+	vector<Hotel*> res;
 	vector<Hotel> filtered = Hotel::showAvailable(_avaHtl, location);
 	for (auto item : filtered)// show the general info of each
 		cout << item.info() << endl;
-	int choice, pos = 0;
+	int choice = 0, amount = 0;
 	cin >> choice;//let the user choose the item to see further detail	
-	Transport* choseTrs = _avaTrs[choice];
+	Hotel* choseHtl = _avaHtl[choice];
+	cout << "amount of room book:";
+	cin >> amount;
 	bool order = 0;// confirm order
 	cin >> order;
 	if (order) {
-		bool buffer = choseTrs->book();
+		bool buffer = choseHtl->book(amount);
 		if (buffer) {
-			_bkdTrs.push_back(choseTrs);
+			_bkdHtl.push_back(choseHtl);
+			res.push_back(choseHtl);
 			updateJson();// dummy function
 		}
 	}
+	return res;
 }
 
 void Facade::showBookedTrs()

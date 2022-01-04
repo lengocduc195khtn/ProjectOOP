@@ -25,9 +25,9 @@ class Facade
 public:	
 	Facade(vector<Flight*> ,vector<Hotel*> , vector<Transport*>);
 	void updateJson() {}	
-	void bookTicket(string dep, string arr, string depTime, string arrTime, bool isTwoWay);
-	void bookTransport(string src, string des, Time time);
-	void bookHotel(Date date, string location);
+	vector<Ticket*> bookTicket(string dep, string arr, string depTime, string arrTime, bool isTwoWay);
+	vector<Transport*> bookTransport(string src, string des, Time time);
+	vector<Hotel*> bookHotel(Date date, string location);
 	void showBookedTrs();
 	void showBookedHtl();
 	void showBookedTck();	
