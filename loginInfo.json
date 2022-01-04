@@ -25,5 +25,14 @@
         "Phone": "121439",
         "Sex": false,
         "Username": "my"
+    },
+    {
+        "Birth": "13052002",
+        "ID": "374897871",
+        "Name": "Nguyen Bao Tin",
+        "Password": "123",
+        "Phone": "0998775863",
+        "Sex": true,
+        "Username": "nguyenbaotin"
     }
 ]

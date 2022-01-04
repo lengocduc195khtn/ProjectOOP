@@ -18,6 +18,7 @@ private:
     // vector<Flight*> _flight;
 public:
     void getInfo(json &j);
+    string print();
 
 public:
     Account();
@@ -30,13 +31,13 @@ public:
 public:
     bool checkUsername(const Account &account);
     bool checkPassword(const Account &account);
-    void print();
-
-protected:
-    template <class T>
-    bool deleteAccount(T &accountList);
+    bool changeInfo(string password);
+    bool changePassword(string password);
 };
 
-Account *createAccount();
-Account *createDetailAccount();
-void inputPassword(string &password);
+Account *createAccount(string username, string password);
+Account *createDetailAccount(string username, string password, string ID, string name, string birth, bool sex, string phone);
+// void inputPassword(string &password);
+
+//** bool checkConditionUsername(string username);
+//**  bool checkConditionPassword(string password);

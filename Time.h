@@ -4,14 +4,13 @@
 class Time
 {
 private:
-    char _d;
+    char _h;
     char _m;
     // _y1 chứa thế kỉ
     // _y2 chứa năm
     // Ví dụ: 1905
     // _y1 = 19, _y2 = 5
-    char _y1;
-    char _y2;
+    char _s;
 
 public:
     Time();

@@ -2,12 +2,17 @@
 
 bool signUp(LinkedListAccount *accountList)
 {
-    Account *account = createAccount();
+    string username, password;
+    cin >> username;
+    cin >> password;
+    Account *account = createAccount(username, password);
     while (accountList->isExistUsername(account))
     {
         cout << "Username is available." << endl;
         delete account;
-        account = createAccount();
+        cin >> username;
+        cin >> password;
+        account = createAccount(username, password);
         /*
         cout << "___List___" << endl;
         accountList->printList();
@@ -15,7 +20,20 @@ bool signUp(LinkedListAccount *accountList)
         */
     }
     delete account;
-    account = createDetailAccount();
+    string ID, name, phone, birth;
+    bool sex;
+    cout << "ID: ";
+    cin >> ID;
+    cout << "Name: ";
+    cin.ignore();
+    getline(std::cin, name);
+    cout << "birth: ";
+    cin >> birth;
+    cout << "sex";
+    cin >> sex;
+    cout << "phone:";
+    cin >> phone;
+    account = createDetailAccount(username, password, ID, name, birth, sex, phone);
     accountList->addNode(new AccountNode(account));
     cout << "Register is successful." << endl;
     /*
@@ -28,7 +46,9 @@ bool signUp(LinkedListAccount *accountList)
 }
 Account *logIn(LinkedListAccount *linkedList)
 {
-    Account *account = createAccount();
+    string username = "lengocduc";
+    string pass = "123";
+    Account *account = createAccount(username, pass);
     char cases;
     while (!linkedList->isExistAccount(account, cases))
     {
@@ -43,7 +63,7 @@ Account *logIn(LinkedListAccount *linkedList)
                 Sleep(15000);
             }
         }
-        account = createAccount();
+        account = createAccount(username, pass);
         /*
         cout << "___List___" << endl;
         linkedList->printList();
@@ -58,4 +78,14 @@ bool logOut(Account **account)
     *account = NULL;
     account = NULL;
     return 1;
+}
+bool changeInfo(Account *account)
+{
+    string pass;
+    return account->changeInfo(pass);
+}
+bool changePass(Account *account)
+{
+    string pass;
+    return account->changePassword(pass);
 }

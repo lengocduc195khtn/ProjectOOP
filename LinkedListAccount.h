@@ -25,4 +25,5 @@ public:
     bool isExistUsername(Account *account);
     bool isExistAccount(Account *&account, char &cases);
     void printList();
+    bool cancelAccount(Account *account);
 };

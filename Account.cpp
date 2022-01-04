@@ -1,18 +1,5 @@
 #include "Account.h"
 
-void Account::getInfo(json &j)
-{
-    json k;
-    k["ID"] = this->_ID;
-    k["Username"] = this->_username;
-    k["Password"] = this->_password;
-    k["Name"] = this->_name;
-    k["Birth"] = this->_birth;
-    k["Sex"] = this->_sex;
-    k["Phone"] = this->_phone;
-
-    j.push_back(k);
-}
 Account::Account()
 {
 }
@@ -33,6 +20,53 @@ Account::Account(string nameUser, string password, string ID, string name, strin
 }
 Account::~Account()
 {
+}
+void Account::getInfo(json &j)
+{
+    json k;
+    k["ID"] = this->_ID;
+    k["Username"] = this->_username;
+    k["Password"] = this->_password;
+    k["Name"] = this->_name;
+    k["Birth"] = this->_birth;
+    k["Sex"] = this->_sex;
+    k["Phone"] = this->_phone;
+
+    j.push_back(k);
+}
+string Account::print()
+{
+    string res = this->_ID;
+    res = res + '|';
+    int i = 0;
+    int n = this->_name.length();
+    while (i < n)
+    {
+        res = res + this->_name[i];
+        i++;
+    }
+    res = res + '|';
+    i = 0;
+    n = this->_birth.length();
+    while (i < n)
+    {
+        res = res + this->_birth[i];
+        i++;
+    }
+    res = res + '|';
+    if (this->_sex == 0)
+        res = res + '0';
+    else
+        res = res + '1';
+    res = res + '|';
+    i = 0;
+    n = this->_phone.length();
+    while (i < n)
+    {
+        res = res + this->_phone[i];
+        i++;
+    }
+    return res;
 }
 bool Account::operator==(const Account &account)
 {
@@ -58,6 +92,36 @@ bool Account::checkPassword(const Account &account)
 {
     return this->_password == account._password;
 }
+bool Account::changeInfo(string password)
+{
+    if (password != this->_password)
+        return false;
+    string ID, name, birth, phone;
+    bool sex;
+    this->_ID = ID;
+    this->_name = name;
+    this->_birth = birth;
+    this->_sex = sex;
+    this->_phone = phone;
+    return true;
+}
+bool Account::changePassword(string password)
+{
+    if (password != this->_password)
+        return false;
+    string newPass;
+    string checkAgain;
+    if (checkConditionPassword(newPass) && newPass != this->_password)
+    {
+        if (newPass == checkAgain)
+        {
+            this->_password = newPass;
+        }
+        else
+            cout << "checkAgain is incorrect." << endl;
+    }
+}
+/*
 void Account::print()
 {
     cout << "ID: " << this->_ID << endl;
@@ -68,45 +132,20 @@ void Account::print()
     cout << "Birth: " << this->_birth << endl;
     cout << "Sex: " << this->_sex << endl;
     cout << "Phone: " << this->_phone << endl;
-}
-Account *createAccount()
+}*/
+Account *createAccount(string username, string password)
 {
-    string nameUser;
-    string password;
-    cout << "Input Username: ";
-    cin >> nameUser;
-    cout << "Input password: ";
-    inputPassword(password);
-    return new Account(nameUser, password);
+    if (checkConditionUsername(username) && checkConditionPassword(password))
+        return new Account(username, password);
+    return NULL;
 }
-Account *createDetailAccount()
+Account *createDetailAccount(string username, string password, string ID, string name, string birth, bool sex, string phone)
 {
-    string nameUser;
-    string password;
-    string ID;
-    string name;
-    string birth;
-    bool sex;
-    string phone;
-
-    cout << "Input Username: ";
-    cin >> nameUser;
-    cout << "Input password: ";
-    inputPassword(password);
-    cout << "Input ID: ";
-    cin >> ID;
-    cin.ignore();
-    cout << "Input your name: ";
-    getline(cin, name);
-    cout << "Input your birth: ";
-    cin >> birth;
-    cout << "Input your sex: ";
-    cin >> sex;
-    cout << "Input your phone: ";
-    cin >> phone;
-    return new Account(nameUser, password, ID, name, birth, sex, phone);
+    if (checkConditionUsername(username) && checkConditionPassword(password))
+        return new Account(username, password, ID, name, birth, sex, phone);
+    return NULL;
 }
-
+/*
 void inputPassword(string &password)
 {
     fflush(stdin);
@@ -135,3 +174,4 @@ void inputPassword(string &password)
     }
     cout << endl;
 }
+*/

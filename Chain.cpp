@@ -12,6 +12,23 @@ AccountNode::AccountNode(Account *key)
 }
 AccountNode::~AccountNode()
 {
+    delete this->_key;
+    this->_key = NULL;
+}
+AccountNode &AccountNode::operator==(AccountNode *accountNode)
+{
+    this->_key = accountNode->_key;
+    this->_next = accountNode->_next;
+    return *this;
+}
+bool AccountNode::delNode(AccountNode *accountNode)
+{
+    delete accountNode->_key;
+    accountNode->_key = NULL;
+    this->_next = accountNode->_next;
+    delete accountNode;
+    accountNode = NULL;
+    return true;
 }
 void AccountNode::getInfo(json &j)
 {

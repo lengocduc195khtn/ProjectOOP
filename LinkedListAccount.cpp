@@ -6,6 +6,17 @@ LinkedListAccount::LinkedListAccount()
 }
 LinkedListAccount::~LinkedListAccount()
 {
+    if (this->_head == NULL)
+        return;
+
+    while (this->_head != NULL)
+    {
+        AccountNode *p = this->_head;
+        this->_head = this->_head->_next;
+        p->_next = NULL;
+        delete p;
+        p = NULL;
+    }
 }
 void LinkedListAccount::readFileJson(string address)
 {
@@ -37,6 +48,7 @@ void LinkedListAccount::updateDatabase(string address)
     f << setw(4) << j;
     f.close();
 }
+/*
 bool LinkedListAccount::findNodeWithName(AccountNode *accountNode, const Account &nameUser)
 {
     return accountNode->_key->checkUsername(nameUser);
@@ -45,6 +57,7 @@ bool LinkedListAccount::findNodeWithPassword(AccountNode *accountNode, const Acc
 {
     return accountNode->_key->checkPassword(password);
 }
+*/
 void LinkedListAccount::addNode(AccountNode *accountNode)
 {
     if (this->_head == NULL)
@@ -59,6 +72,20 @@ void LinkedListAccount::addNode(AccountNode *accountNode)
 }
 void LinkedListAccount::delNode(AccountNode *accountNode)
 {
+    if (this->_head == NULL)
+    {
+        this->_head = accountNode;
+        return;
+    }
+    AccountNode *p = this->_head;
+    AccountNode *prev;
+    while (p != NULL && p->_key != accountNode->_key)
+    {
+        prev = p;
+        p = p->_next;
+    }
+    if (p != NULL)
+        prev->delNode(accountNode);
 }
 void LinkedListAccount::getInfo(json &j)
 {
@@ -105,4 +132,16 @@ void LinkedListAccount::printList()
         p->_key->print();
         p = p->_next;
     }
+}
+bool LinkedListAccount::cancelAccount(Account *account)
+{
+    string pass;
+    Account *temp = new Account("", pass);
+    if (!account->checkPassword(*temp))
+        return false;
+    AccountNode *p = new AccountNode(account);
+    this->delNode(p);
+    delete p;
+    delete temp;
+    return true;
 }

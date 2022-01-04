@@ -5,10 +5,9 @@ Time::Time()
 }
 Time::Time(string time)
 {
-    this->_d = 'a' + (10 * (time[0] - '0') + (time[1] - '0'));
+    this->_h = 'a' + (10 * (time[0] - '0') + (time[1] - '0'));
     this->_m = 'a' + (10 * (time[2] - '0') + (time[3] - '0'));
-    this->_y1 = 'a' + (10 * (time[4] - '0') + (time[5] - '0'));
-    this->_y2 = 'a' + (10 * (time[6] - '0') + (time[7] - '0'));
+    this->_s = 'a' + (10 * (time[4] - '0') + (time[5] - '0'));
 }
 Time::~Time()
 {
@@ -16,23 +15,21 @@ Time::~Time()
 
 string Time::stringTime()
 {
-    string res = to_string(this->_d - 'a');
+    string res = to_string(this->_h - 'a');
     res = res + to_string(this->_m - 'a');
-    res = res + to_string(this->_y1 - 'a');
-    res = res + to_string(this->_y2 - 'a');
+    res = res + to_string(this->_s - 'a');
     return res;
 }
 bool Time::operator==(const Time &time)
 {
-    if (this->_d == time._d && this->_m == time._m && this->_y1 == time._y1 && this->_y2 == time._y2)
+    if (this->_h == time._h && this->_m == time._m && this->_s == time._s)
         return true;
     return false;
 }
 Time &Time::operator=(const Time &time)
 {
-    this->_d = time._d;
+    this->_h = time._h;
     this->_m = time._m;
-    this->_y1 = time._y1;
-    this->_y2 = time._y2;
+    this->_s = time._s;
     return *this;
 }
