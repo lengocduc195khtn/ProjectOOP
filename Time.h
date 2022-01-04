@@ -62,5 +62,16 @@ public:
         min = (stoi(str.substr(10, 2)));
         return this;
     }
-
+    static string ParseDate(string str) {
+        string res = str.substr(0, 2) + str.substr(3, 2) + str.substr(6);
+        return res;
+    }
+    static string ParseTime(string str) {
+        string res = str.substr(0, 2) + str.substr(3);
+        return res;
+    }
+    static string ToDate(string str) {
+        string res = str.substr(0, 2) + "/" + str.substr(2, 2) + "/" + str.substr(4);
+        return res;
+    }
 };
