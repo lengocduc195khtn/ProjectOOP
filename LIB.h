@@ -15,3 +15,6 @@
 
 using namespace std;
 using json = nlohmann::json;
+
+bool checkConditionUsername(string username);
+bool checkConditionPassword(string password);

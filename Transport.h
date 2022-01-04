@@ -1,4 +1,6 @@
+#pragma once
 #include "LIB.h"
+#include "Time.h"
 
 class Transport
 {
@@ -14,20 +16,31 @@ private:
     string _ID;
     string _locationStart;
     string _locationEnd;
-    int _type;
+    Time _time;
+    string _type;
     double _cost;
 
-public:
-    Transport(string ID, string locationStart, string locationEnd, string time, int type, double cost);
+    // Một số thông tin đặc biệt riêng
+    string _driver;
+    string _licensePlate;
 
 public:
-    virtual void readFile() = 0;
+    Transport(string ID, string locationStart, string locationEnd, string time, string type, double cost, string driver, string licensePlate);
 
 public:
     virtual bool book() = 0;
-    virtual cancel() = 0;
+    virtual bool cancel() = 0;
     virtual bool checkAvailable() = 0;
-    virtual void showAvailable(Time time, string locationStart, string locationEnd) = 0;
+
+    virtual bool isFull() = 0;
+    void showAvailable(list<Transport *> &transport, Time time);
+    void showAvailable(list<Transport *> &transport, string locationStart, string locationEnd);
+    void showAvailable(list<Transport *> &transport, Time time, string locationStart, string locationEnd);
+
+    void getBasicInfo(json &j);
+    virtual void getInfo(json &j) = 0;
+    string info();
+    string receipt();
 };
 
-int calculate(int type);
+int calculate(string type);

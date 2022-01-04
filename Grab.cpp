@@ -1,8 +1,8 @@
 #include "Grab.h"
 
-Grab::Grab(string ID, string locationStart, string locationEnd, string time, int type, double cost) : Transport(ID, locationStart, locationEnd, time, type, cost)
+Grab::Grab(string ID, string locationStart, string locationEnd, string time, string type, double cost, string driver, string licensePlate, bool current) : Transport(ID, locationStart, locationEnd, time, type, cost, driver, licensePlate)
 {
-    this->_current = false;
+    this->_current = current;
 }
 
 bool Grab::book()
@@ -25,18 +25,14 @@ bool Grab::checkAvailable()
         return 1;
     return 0;
 }
-void Grab::showAvailable(vector<Tranport *> &transport, Time time)
+bool Grab::isFull()
 {
-    if (this->_current == false && time == this->_time)
-        transport.push_back(this);
+    return this->_current;
 }
-void Grab::showAvailable(vector<Tranport *> &transport, string locationStart, string locationEnd)
+void Grab::getInfo(json &j)
 {
-    if (this->_current == false && locationStart == this->_locationStart && locationEnd == this->_locationEnd)
-        transport.push_back(this);
-}
-void Grab::showAvailable(vector<Tranport *> &transport, Time time, string locationStart, string locationEnd)
-{
-    if (this->_current == false && time == this->_time && locationStart == this->_locationStart && locationEnd == this->_locationEnd)
-        transport.push_back(this);
+    json k;
+    this->getBasicInfo(k);
+    k["Current"] = this->_current;
+    j.push_back(k);
 }
