@@ -1,30 +1,126 @@
-#include"Facade.h"
+﻿#include"Facade.h"
 
-void Facade::showAvaTck(string time, string src, string des, bool isTwoWay)
+Facade::Facade(vector<Flight*> flt, vector<Hotel*> htl, vector<Transport*> trs)
 {
-	vector<Flight> filtered = Flight::filter(_avaFlt, src, des, time);// filter the flights
+	for (auto item : flt)
+		_avaFlt.push_back(item);
+	for(auto item : htl)
+		_avaHtl.push_back(item);
+	for (auto item : trs)
+		_avaTrs.push_back(item);	
+}
+
+void Facade::bookTicket(string dep, string arr, Date depD, Time depT, Date arrD, Time arrT, bool isTwoWay)
+{
+	vector<Flight> filtered = Flight::showAvailable(_avaFlt, dep, arr, depT, depD, arrT, arrD);// showAvailable the flights
 	for (auto flight : filtered)// show the general info of each
 		cout << flight.info() << endl;
-	int choice, rch, cch, numOfTck = 0;
+	int choice, pos = 0;
 	cin >> choice;//let the user choose the flight to see further detail	
 	Flight* choseFlt = _avaFlt[choice];
 	choseFlt->showEmptySeat(isTwoWay);
-	cout << "How many ticket: ";
-	cin >> numOfTck;
-	for (int i = 0; i < numOfTck; i++) {
-		cout << "Choose row index: ";
-		cin >> rch;//let the user choose the row of the tck
-		cout << "Choose column index: ";
-		cin >> cch;//let the user choose the col of the tck
-		cout << "Seat info:\n" << choseFlt->seatInfo(rch, cch);
-		bool order = 0;// confirm order
-		cin >> order;
-		if (order) {
-			Ticket* choseSeat = choseFlt->book(rch, cch);
-			if (choseSeat) {
-				_bkdTck.push_back(choseSeat);
-				updateJson();// dummy function
-			}				
-		}					
-	}	
+	cout << "Choose position index: ";
+	cin >> pos;
+	cout << "Seat info:\n" << choseFlt->seatInfo(pos);
+	bool order = 0;// confirm order
+	cin >> order;
+	if (order) {
+		Ticket* choseSeat = choseFlt->book(pos);
+		if (choseSeat) {
+			_bkdTck.push_back(choseSeat);
+			updateJson();// dummy function
+		}
+	}
+}
+
+void Facade::bookTransport(string src, string des, Time time)
+{
+	vector<Transport*> filtered = Transport::showAvailable(_avaTrs, time, src, des);
+	for (auto item : filtered)// show the general info of each
+		cout << item->info() << endl;
+	int choice, pos = 0;
+	cin >> choice;//let the user choose the item to see further detail	
+	Transport* chosetrs = _avaTrs[choice];
+	bool order = 0;// confirm order
+	cin >> order;
+	if (order) {
+		bool buffer = chosetrs->book();
+		if (buffer) {
+			_bkdTrs.push_back(chosetrs);
+			updateJson();// dummy function
+		}
+	}
+}
+
+void Facade::bookHotel(Date date, string location)// hỏi Thiên xem htl db có sẵn ngày chưa
+{
+	vector<Hotel> filtered = Hotel::showAvailable(_avaHtl, location);
+	for (auto item : filtered)// show the general info of each
+		cout << item.info() << endl;
+	int choice, pos = 0;
+	cin >> choice;//let the user choose the item to see further detail	
+	Transport* choseTrs = _avaTrs[choice];
+	bool order = 0;// confirm order
+	cin >> order;
+	if (order) {
+		bool buffer = choseTrs->book();
+		if (buffer) {
+			_bkdTrs.push_back(choseTrs);
+			updateJson();// dummy function
+		}
+	}
+}
+
+void Facade::showBookedTrs()
+{
+	for (auto item : _bkdTrs)
+		cout << item->info() << endl;
+	cout << "select one:";
+	int selection = 0;
+	cin >> selection;
+	auto selected = _bkdTrs[selection];
+	cout << selected->receipt();			
+}
+
+void Facade::showBookedHtl()
+{
+	for (auto item : _bkdHtl)
+		cout << item->info() << endl;
+	cout << "select one:";
+	int selection = 0;
+	cin >> selection;
+	auto selected = _bkdHtl[selection];
+	cout << selected->receipt();
+}
+
+void Facade::showBookedTck()
+{
+	for (auto item : _bkdTck)
+		cout << item->info() << endl;
+	cout << "select one:";
+	int selection = 0;
+	cin >> selection;
+	auto selected = _bkdTck[selection];
+	cout << selected->receipt();
+}
+
+void Facade::cancelTrs(int index)
+{	
+	if (index >= _bkdTrs.size())
+		return;
+	_bkdTrs.erase(next(_bkdTrs.begin(), index));
+}
+
+void Facade::cancelHtl(int index)
+{
+	if (index >= _bkdHtl.size())
+		return;
+	_bkdHtl.erase(next(_bkdHtl.begin(), index));
+}
+
+void Facade::cancelTck(int index)
+{
+	if (index >= _bkdTck.size())
+		return;
+	_bkdTck.erase(next(_bkdTck.begin(), index));
 }

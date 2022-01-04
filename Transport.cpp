@@ -5,7 +5,7 @@ Transport::Transport(string ID, string locationStart, string locationEnd, string
     this->_ID = ID;
     this->_locationStart = locationStart;
     this->_locationEnd = locationEnd;
-    Time *temp = new Time(time);
+    Time* temp = new Time(time);
     this->_time = *temp;
     this->_type = type;
     this->_cost = cost;
@@ -35,34 +35,21 @@ string Transport::receipt()
     res = res + this->_licensePlate;
     return res;
 }
-void Transport::showAvailable(list<Transport *> &transport, Time time)
+vector<Transport*> Transport::showAvailable(vector<Transport*> transport, Time time, string locationStart, string locationEnd)
 {
-    if (!this->isFull() && time == this->_time)
-        transport.push_back(this);
-}
-void Transport::showAvailable(list<Transport *> &transport, string locationStart, string locationEnd)
-{
-    if (!this->isFull() && locationStart == this->_locationStart)
-    {
-        if (locationEnd == this->_locationEnd)
-            transport.push_front(this);
-        else
-            transport.push_back(this);
+    vector<Transport*> res;
+    for (auto item : transport) {
+        if (item->isFull())
+            continue;
+        if (locationStart == item->_locationStart && locationEnd == item->_locationEnd)
+            if (time == item->_time)// prioritize base on time
+                res.insert(res.begin(), item);
+            else
+                res.push_back(item);
     }
+    return res;
 }
-void Transport::showAvailable(list<Transport *> &transport, Time time, string locationStart, string locationEnd)
-{
-    if (!this->isFull())
-    {
-        if (time == this->_time && locationStart == this->_locationStart && locationEnd == this->_locationEnd)
-            transport.push_front(this);
-        if (time == this->_time)
-            transport.push_back(this);
-        if (locationStart == this->_locationStart && locationEnd == this->_locationEnd)
-            transport.push_back(this);
-    }
-}
-void Transport::getBasicInfo(json &j)
+void Transport::getBasicInfo(json& j)
 {
     j["ID"] = this->_ID;
     j["LocationStart"] = this->_locationStart;

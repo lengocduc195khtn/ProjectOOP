@@ -1,6 +1,7 @@
-#pragma once
-#include "LIB.h"
+﻿#pragma once
+#include"json.hpp"
 #include "Time.h"
+using json = nlohmann::json;
 
 class Transport
 {
@@ -33,12 +34,10 @@ public:
     virtual bool checkAvailable() = 0;
 
     virtual bool isFull() = 0;
-    void showAvailable(list<Transport *> &transport, Time time);
-    void showAvailable(list<Transport *> &transport, string locationStart, string locationEnd);
-    void showAvailable(list<Transport *> &transport, Time time, string locationStart, string locationEnd);
+    static vector<Transport*> showAvailable(vector<Transport*> transport, Time time, string locationStart, string locationEnd);
 
-    void getBasicInfo(json &j);
-    virtual void getInfo(json &j) = 0;
+    void getBasicInfo(json& j);
+    virtual void getInfo(json& j) = 0;
     string info();
     string receipt();
 };
